@@ -6,9 +6,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'pry-rails'
+
 gem 'awesome_print'
+gem 'foundation-rails', '~> 5.5', '>= 5.5.3.2'
 gem 'haml-rails'
+gem 'pry-rails'
 
 group :development do
   gem 'better_errors'
