@@ -15,5 +15,5 @@
         .links
           = link_to_add_association 'Add option', f, :options, class: 'tiny button hollow primary', partial: 'options/fields'
         = f.error(:options)
-      = f.submit class: 'button'
+      = f.submit 'Save question', class: 'button success hollow'
 

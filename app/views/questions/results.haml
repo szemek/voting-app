@@ -1,15 +1,8 @@
 .expanded.row
-  .medium-12.large-12.columns
+  .medium-8.large-8.columns
     %h1= question.title
 
-    %table
-      %tr
-        %th Option
-        %th Votes
-      - question.options.each do |option|
-        %tr
-          %td= option.title
-          %td= option.votes.count
+    = column_chart(data, {min: 0, max: 100})
 
     %p
       = link_to 'Back', question_path(question), class: 'button hollow'

@@ -17,8 +17,9 @@ class QuestionsController < ApplicationController
 
   def results
     question = Question.find(params[:question_id])
+    data = QuestionResults.new(question).data
 
-    render :results, locals: { question: question }
+    render :results, locals: { question: question, data: data }
   end
 
   private
