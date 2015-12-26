@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
   private
 
   def questions
-    Question.last(10)
+    Question.recent
   end
 
   def question_params
