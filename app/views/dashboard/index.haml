@@ -7,11 +7,13 @@
 
   .medium-8.medium-offset-1.large-9.large-offset-1.columns
     = simple_form_for(question) do |f|
+      = f.error_notification message: 'Your question could not be saved'
       = f.input :title, label: false, placeholder: 'Add you question here'
       #options
         = f.simple_fields_for :options do |option|
-          = render partial: 'options/fields', f: option
+          = render partial: 'options/fields', locals: { f: option }
         .links
           = link_to_add_association 'Add option', f, :options, class: 'tiny button hollow primary', partial: 'options/fields'
+        = f.error(:options)
       = f.submit class: 'button'
 

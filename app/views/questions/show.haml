@@ -1,8 +1,9 @@
 .expanded.row
-  %h1= question.title
+  .medium-12.large-12.columns
+    %h1= question.title
 
-  %ul
-    - question.options.each do |option|
-      %li= option.title
-  %p
-    = link_to 'Back', root_path, class: 'button hollow'
+    %ul
+      - question.options.each do |option|
+        %li= option.title
+    %p
+      = link_to 'Back', root_path, class: 'button hollow'

@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        question:
+          attributes:
+            title:
+              blank: 'This field cannot be blank'
+            options:
+              blank: 'Add at least one option'
