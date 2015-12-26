@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 
 gem 'awesome_print'
+gem 'chartkick', '~> 1.4', '>= 1.4.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.6'
 gem 'foundation-rails', '~> 5.5', '>= 5.5.3.2'
 gem 'haml-rails'
