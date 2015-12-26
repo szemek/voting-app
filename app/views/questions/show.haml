@@ -2,8 +2,11 @@
   .medium-12.large-12.columns
     %h1= question.title
 
-    %ul
-      - question.options.each do |option|
-        %li= option.title
+    - question.options.each do |option|
+      = form_for :option, url: question_option_vote_path(question, option) do |f|
+        = f.submit(option.title, class: 'button success hollow')
+
+    %p
+      = link_to 'Go to results', question_results_path(question), class: 'button'
     %p
       = link_to 'Back', root_path, class: 'button hollow'

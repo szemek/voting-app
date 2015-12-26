@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'dashboard#index'
-  resources :questions
+  resources :questions, only: [:create, :show] do
+    get :results
+    resources :options, only: [] do
+      post :vote
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

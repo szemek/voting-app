@@ -15,6 +15,12 @@ class QuestionsController < ApplicationController
     render :show, locals: { question: question }
   end
 
+  def results
+    question = Question.find(params[:question_id])
+
+    render :results, locals: { question: question }
+  end
+
   private
 
   def questions
