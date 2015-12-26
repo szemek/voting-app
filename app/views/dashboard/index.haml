@@ -1,14 +1,17 @@
 .expanded.row
   .medium-3.large-2.columns
     %p Last questions
+    %ul.menu
+      - questions.each do |question|
+        %li= link_to question.title, question_path(question)
+
   .medium-8.medium-offset-1.large-9.large-offset-1.columns
-    = simple_form_for @question do |f|
+    = simple_form_for(question) do |f|
       = f.input :title, label: false, placeholder: 'Add you question here'
-      %h3 Options
       #options
         = f.simple_fields_for :options do |option|
-          = render 'option_fields', f: option
+          = render partial: 'options/fields', f: option
         .links
-          = link_to_add_association 'Add option', f, :options, class: 'tiny button hollow primary'
+          = link_to_add_association 'Add option', f, :options, class: 'tiny button hollow primary', partial: 'options/fields'
       = f.submit class: 'button'
 
