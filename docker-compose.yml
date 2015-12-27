@@ -1,0 +1,27 @@
+balancer:
+  build: .
+  dockerfile: balancer.dockerfile
+  ports:
+    - "80:80"
+  links:
+    - app
+
+app:
+  build: .
+  dockerfile: app.dockerfile
+  expose:
+    - "80"
+  links:
+    - database
+  env_file:
+    - ./docker/app/.env
+  volumes_from:
+    - cache
+
+cache:
+  image: busybox
+  volumes:
+    - /cache
+
+database:
+  image: postgres

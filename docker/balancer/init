@@ -1,0 +1,3 @@
+#!/bin/sh
+ruby /opt/scripts/configure.rb
+exec nginx -g "daemon off;"

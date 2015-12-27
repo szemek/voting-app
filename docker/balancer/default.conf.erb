@@ -1,0 +1,17 @@
+upstream backend {
+<% hosts.take(1).each do |host| %>
+  server <%= host %>;
+<% end %>
+<% hosts.drop(1).each do |host| %>
+  server <%= host %> backup;
+<% end %>
+}
+
+server {
+  listen       80;
+  server_name  localhost;
+
+  location / {
+    proxy_pass http://backend;
+  }
+}
