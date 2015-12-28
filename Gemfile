@@ -21,5 +21,8 @@ group :development do
 end
 
 group :test do
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
   gem 'rspec-rails'
 end
