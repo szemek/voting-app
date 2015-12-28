@@ -4,5 +4,10 @@ rvm:
   - 2.2.3
 sudo: false
 bundler_args: --without development
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.travis.yml config/database.yml
 script:
-  - bundle exec rspec
+  - xvfb-run bundle exec rspec
