@@ -14,7 +14,7 @@ app:
   links:
     - database
   env_file:
-    - ./docker/app/.env
+    - ./docker/app/env
   volumes_from:
     - cache
 
