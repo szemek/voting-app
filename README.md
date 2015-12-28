@@ -2,6 +2,16 @@
 
 [![Build Status](https://travis-ci.org/szemek/voting-app.svg?branch=master)](https://travis-ci.org/szemek/voting-app)
 
+## Table of contents
+
+  * [Docker architecture overview](#docker-architecture-overview)
+    * [load balancer](#load-balancer)
+    * [app](#app)
+    * [cache](#cache)
+    * [database](#database)
+  * [Installation](#installation)
+
+
 ## Docker architecture overview
 
 ![Overview](docs/overview.png)
