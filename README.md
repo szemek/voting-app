@@ -1,5 +1,7 @@
 # Voting App
 
+[![Build Status](https://travis-ci.org/szemek/voting-app.svg?branch=master)](https://travis-ci.org/szemek/voting-app)
+
 ## Docker architecture overview
 
 ![Overview](docs/overview.png)
